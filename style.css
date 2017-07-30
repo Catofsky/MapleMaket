@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  background: rgb(149,127,175);
+  min-height: 40px;
+  width: 100%;
+  z-index: 20;
+}
+
+#chat {
+  max-width: 500px;
+  margin: 60px auto;
+}
+
+.tooltip {
+  position: relative;
+  display: table;
+  padding: 12px;
+  min-height: 20px;
+  min-width: 20px;
+  max-width: 300px;
+  font-family: 'Trebuchet MS';
+  text-align: left;
+  margin: 20px;
+  border-radius: 5px;
+  background: #dacce9;
+}
+
+.tooltip:before, .tooltip:after{
+  content: '';
+  position: absolute;
+}
+
+.tooltip::before {
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  border-radius:5px;
+  margin: -12px;
+  box-shadow: 0px 3px 3px 0px rgba(0,0,0,.63);
+}
+
+.tooltip::after{
+  top: 14px;
+  left: -5px;
+  width: 13px;
+  height: 13px;
+  -webkit-transform: rotate(30deg) skewX(-30deg);
+  -moz-transform: rotate(30deg) skewX(-30deg);
+  -ms-transform: rotate(30deg) skewX(-30deg);
+  -o-transform: rotate(30deg) skewX(-30deg);
+  background: #dacce9;
+  z-index: -1;
+  box-shadow: 3px 3px 3px 0px rgba(0,0,0,.63);
+}
+
+
+.tooltip_r {
+  position: relative;
+  display: table;
+  padding: 12px;
+  min-height: 20px;
+  min-width: 20px;
+  max-width: 300px;
+  font-family: 'Trebuchet MS';
+  text-align: left;
+  margin: 30px;
+  margin-left: auto;
+  border-radius: 5px;
+  background: #b0acde;
+}
+
+.tooltip_r:before, .tooltip_r:after{
+  content: '';
+  position: absolute;
+}
+
+.tooltip_r::before {
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  border-radius:5px;
+  margin: -12px;
+  box-shadow: 0px 3px 3px 0px rgba(0,0,0,.63);
+}
+
+.tooltip_r::after{
+  top: 14px;
+  right: -5px;
+  width: 13px;
+  height: 13px;
+  -webkit-transform: rotate(30deg) skewX(-30deg);
+  -moz-transform: rotate(30deg) skewX(-30deg);
+  -ms-transform: rotate(30deg) skewX(-30deg);
+  -o-transform: rotate(30deg) skewX(-30deg);
+  background: #b0acde;
+  z-index: -1;
+  box-shadow: 3px 3px 3px 0px rgba(0,0,0,.63);
+}
