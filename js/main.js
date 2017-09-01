@@ -22,13 +22,10 @@ document.addEventListener("DOMContentLoaded", function(e) {
   }
 
   sc.ondrag = function (e) {
-    console.log(e);
     sc.style.top = sc.style.offsetTop + e.movementY + 'px';
   }
 
   sc.onmousedown = function f(e) {
-    console.log(e);
-
     f.layerY = e.layerY;
 
     move(e);
@@ -41,11 +38,21 @@ document.addEventListener("DOMContentLoaded", function(e) {
     }
 
     function move(e) {
+
+      var but = mes.offsetHeight + mes.offsetTop;
+      var top = 89;
+
       var y = e.pageY - f.layerY;
-      if (y >= 89)
+
+      if (y >= top && sc.offsetHeight + y <= but)
         sc.style.top = y + 'px';
       else
-        sc.style.top = '89px';
+        if ((but - top) / 2 > e.pageY)
+          sc.style.top = top + 'px';
+        else
+          sc.style.top = but - sc.offsetHeight + 'px';
+
+       mes.scrollTop = (sc.offsetTop - top) * mes.scrollHeight / mes.clientHeight;
     }
 
     function end() {
