@@ -78,8 +78,9 @@ hr {
 }
 
 .message {
+  display: inline-flex;
   box-sizing: border-box;
-  max-width: 700px;
+  width: 700px;
   margin: 0;
   padding: 16px 32px;
   clear: both;
@@ -91,7 +92,6 @@ hr {
 }
 
 .message > div {
-  display: inline-block;
   background: #516b5a;
   padding: 16px;
   border-radius: 5px;
@@ -111,7 +111,6 @@ hr {
 
 .message > .you {
   background: #4b5d5a;
-  display: flex;
   margin-left: auto;
 }
 
