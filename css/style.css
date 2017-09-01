@@ -78,10 +78,16 @@ hr {
 }
 
 .message {
+  box-sizing: border-box;
   max-width: 700px;
   margin: 0;
-  padding: 0;
+  padding: 16px 32px;
   clear: both;
+  cursor: pointer;
+}
+
+.message:hover {
+  background: #394042;
 }
 
 .message > div {
@@ -89,7 +95,6 @@ hr {
   background: #516b5a;
   padding: 16px;
   border-radius: 5px;
-  margin: 18px 32px;
   position: relative;
   max-width: 400px;
 }
@@ -106,7 +111,8 @@ hr {
 
 .message > .you {
   background: #4b5d5a;
-  float: right;
+  display: flex;
+  margin-left: auto;
 }
 
 .message > .you:after {
