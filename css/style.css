@@ -72,13 +72,13 @@ hr {
 
 .messages {
   max-height: calc(100vh - 89px);
-  min-width: 718px;
+  min-width: 900px;
   overflow-y: scroll;
   overflow-x: hidden;
 }
 
 .message {
-  width: auto;
+  max-width: 700px;
   margin: 0;
   padding: 0;
   clear: both;
