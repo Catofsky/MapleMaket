@@ -91,12 +91,12 @@ hr {
   background: #394042;
 }
 
-.message > div {
+.message > .me, .message > .you {
   background: #516b5a;
   padding: 16px;
   border-radius: 5px;
   position: relative;
-  max-width: 400px;
+  max-width: 500px;
 }
 
 .message > .me:before {
@@ -132,4 +132,11 @@ hr {
   height: 0;
   background: #5c6769;
   border-radius: 2px;
+}
+
+.ava {
+  width: 64px;
+  height: 64px;
+  border-radius: 32px;
+  overflow: hidden;
 }
