@@ -18,17 +18,16 @@ document.addEventListener("DOMContentLoaded", function(e) {
   resize();
   window.onresize = resize;
   frame.onresize = function () {
-    console.log('resize');
     resize();
   };
 
   mes.onscroll = function () {
     sc.style.top = (89 + (mes.scrollTop * mes.clientHeight / mes.scrollHeight)) + 'px';
-  }
+  };
 
   sc.ondrag = function (e) {
     sc.style.top = sc.style.offsetTop + e.movementY + 'px';
-  }
+  };
 
   sc.onmousedown = function f(e) {
     f.layerY = e.layerY;
@@ -40,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
         move(e);
       else
         end();
-    }
+    };
 
     function move(e) {
 
@@ -67,7 +66,11 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
     sc.onmouseup = function() {
       end();
-    }
-  }
+    };
+  };
 
 });
+
+window.scroll_to_end = function () {
+  mes.scrollTop = mes.scrollHeight - mes.clientHeight;
+}

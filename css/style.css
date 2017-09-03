@@ -99,6 +99,16 @@ hr {
   clear: both;
   cursor: pointer;
   position: relative;
+
+  -webkit-transition: all .2s ease-in;
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.message.new_animation {
+  padding: 12px 10px;
+  opacity: 0;
 }
 
 .message .img_content {
@@ -198,4 +208,14 @@ hr {
 .ava.other {
   right: -82px;
   top: 0px;
+}
+
+.message .unread {
+  background: #13c693;
+  height: 6px;
+  width: 6px;
+  border-radius: 3px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }
