@@ -53,11 +53,8 @@ hr {
 }
 
 #chat {
-  background: #373e3f;
+  /*background: #373e3f;*/
   margin: 0 auto;
-  width: 700px;
-  max-height: calc(100vh - 44px);
-
   overflow: hidden;
 }
 
@@ -71,10 +68,18 @@ hr {
 }
 
 .messages {
-  max-height: calc(100vh - 89px);
-  min-width: 900px;
+  letter-spacing: .01em;
+  max-height: calc(100vh - 169px);
+  width: 120%;
   overflow-y: scroll;
   overflow-x: hidden;
+}
+
+#chat .wrapper {
+  width: 700px;
+  background: #373e3f;
+  margin-left: calc((100vw - 700px) / 2);
+  position: relative;
 }
 
 .message {
@@ -85,6 +90,7 @@ hr {
   padding: 16px 32px;
   clear: both;
   cursor: pointer;
+  position: relative;
 }
 
 .message:hover {
@@ -134,9 +140,45 @@ hr {
   border-radius: 2px;
 }
 
+#input {
+  overflow: auto;
+  background: #3a484c;
+  min-height: 80px;
+  margin-left: calc((100vw - 700px) / 2);
+  width: 700px;
+  padding: 0;
+}
+
+#input .input_text {
+  color: #fff;
+  margin: 16px auto;
+  resize: none;
+  background: #3a484c;
+  border-radius: 3px;
+  border: 1px solid #61787f;
+  width: 80%;
+  padding: 12px;
+}
+
+#input .input_text:focus {
+  outline: none;
+}
+
 .ava {
   width: 64px;
   height: 64px;
   border-radius: 32px;
+  border: 1px solid #61787f;
   overflow: hidden;
+  position: absolute;
+}
+
+.ava.my {
+  left: -82px;
+  top: 8px;
+}
+
+.ava.other {
+  right: -82px;
+  top: 8px;
 }

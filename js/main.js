@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(e) {
-  
+
   window.sc = document.querySelector('.scrollbar');
+  var wrapper = document.querySelector('.wrapper');
   var chat = document.querySelector('#chat');
   window.mes = document.querySelector('.messages');
 
@@ -9,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
   // var height = mes.clientHeight;
 
   var resize = function () {
-    sc.style.left = (chat.offsetLeft + 703) + 'px';
+    sc.style.left = (wrapper.offsetLeft + 704) + 'px';
     sc.style.height = (mes.clientHeight * mes.clientHeight / mes.scrollHeight) + 'px';
     sc.style.top = (89 + (mes.scrollTop * mes.clientHeight / mes.scrollHeight)) + 'px';
   }
@@ -66,4 +67,3 @@ document.addEventListener("DOMContentLoaded", function(e) {
   }
 
 });
-
