@@ -53,9 +53,9 @@ hr {
 }
 
 #chat {
-  /*background: #373e3f;*/
   margin: 0 auto;
   overflow: hidden;
+  max-height: calc(100vh - 44px);
 }
 
 #chat .chat_title {
@@ -87,10 +87,19 @@ hr {
   box-sizing: border-box;
   width: 700px;
   margin: 0;
-  padding: 16px 32px;
+  padding: 12px 32px;
   clear: both;
   cursor: pointer;
   position: relative;
+}
+
+.message .img_content {
+  margin: 12px -16px -16px -16px;
+}
+
+.message .img_content img {
+  max-width: 500px;
+  border-radius: 0 0 5px 5px;
 }
 
 .message:hover {
@@ -99,13 +108,13 @@ hr {
 
 .message > .me, .message > .you {
   background: #516b5a;
-  padding: 16px;
+  padding: 12px 16px;
   border-radius: 5px;
   position: relative;
   max-width: 500px;
 }
 
-.message > .me:before {
+.message > .first.me:before {
   content:"";
   border-style: solid;
   border-width: 7px 14px 7px 0;
@@ -120,7 +129,7 @@ hr {
   margin-left: auto;
 }
 
-.message > .you:after {
+.message > .first.you:after {
   content:"";
   border-style: solid;
   border-width: 7px 0 7px 14px;
@@ -175,10 +184,10 @@ hr {
 
 .ava.my {
   left: -82px;
-  top: 8px;
+  top: 0px;
 }
 
 .ava.other {
   right: -82px;
-  top: 8px;
+  top: 0px;
 }
