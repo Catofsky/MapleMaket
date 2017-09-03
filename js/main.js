@@ -17,7 +17,10 @@ document.addEventListener("DOMContentLoaded", function(e) {
 
   resize();
   window.onresize = resize;
-  mes.onresize = resize;
+  frame.onresize = function () {
+    console.log('resize');
+    resize();
+  };
 
   mes.onscroll = function () {
     sc.style.top = (89 + (mes.scrollTop * mes.clientHeight / mes.scrollHeight)) + 'px';
