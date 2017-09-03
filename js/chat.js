@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
   window.chat_dialog = document.querySelector('#input > .input_text');
   window.content = document.querySelector('.messages .wrapper');
 
+  chat_dialog.focus();
+
   chat_dialog.onkeypress = function (e) {
     if (e.keyCode === 13) {
       var text = chat_dialog.innerHTML.replace(/(\s|&nbsp;)+/g, ' ');
@@ -10,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
       if (text === '' || text === ' ')
         return false;
 
-      write(text);
+      write(text, 'me');
       remove_unread();
       scroll_to_end();
 
@@ -30,7 +32,7 @@ window.answered = 0;
 function time_answer() {
   if (answered == 0) {
     setTimeout(function () {
-      send_answer('Пошел нахуй');
+      write('Пошел нахуй', 'you');
       scroll_to_end();
       answered++;
     }, 5000);
@@ -40,13 +42,13 @@ function time_answer() {
 
   if (answered == 2) {
     setTimeout(function () {
-      send_answer('Я не шучу');
+      write('Я не шучу', 'you');
       scroll_to_end();
       answered++;
     }, 5000);
 
     setTimeout(function () {
-      send_answer('(шучу)');
+      write('(шучу)', 'you');
       scroll_to_end();
       answered++;
     }, 7000);
@@ -55,7 +57,7 @@ function time_answer() {
   }
 }
 
-function send_answer(text) {
+function write(text, from) {
   var b = document.createElement('div');
   b.className = 'message new_animation';
 
@@ -64,55 +66,23 @@ function send_answer(text) {
   }, 5);
 
   var c = document.createElement('div');
-  c.className = 'you';
+  c.className = from;
   c.innerHTML = text;
 
-  if (last_message !== 'you') {
+  if (last_message !== from) {
     c.className += ' first';
 
     var a = document.createElement('div');
-    a.className = 'ava other';
+    a.className = from === 'me' ? 'ava my' : 'ava other';
 
     var im = document.createElement('img');
-    im.src = 'img/ava2.png';
+    im.src = from === 'me' ? 'img/ava1.png' : 'img/ava2.png';
 
     a.appendChild(im);
 
     b.appendChild(a);
 
-    last_message = 'you';
-  }
-
-  b.appendChild(c);
-  content.append(b);
-}
-
-function write(text) {
-  var b = document.createElement('div');
-  b.className = 'message new_animation';
-
-  setTimeout(function () {
-    b.classList.remove('new_animation');
-  }, 5);
-
-  var c = document.createElement('div');
-  c.className = 'me';
-  c.innerHTML = text;
-
-  if (last_message !== 'me') {
-    c.className += ' first';
-
-    var a = document.createElement('div');
-    a.className = 'ava my';
-
-    var im = document.createElement('img');
-    im.src = 'img/ava1.png';
-
-    a.appendChild(im);
-
-    b.appendChild(a);
-
-    last_message = 'me';
+    last_message = from;
   }
 
   b.appendChild(c);
